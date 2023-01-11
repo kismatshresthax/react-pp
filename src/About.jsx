@@ -12,90 +12,13 @@ import {
 import React from "react";
 import InfoIcon from "@mui/icons-material/Info";
 import SearchIcon from "@mui/icons-material/Search";
+import { Headers } from "./Headers";
 
-const HomePage1 = () => {
+const About = () => {
   return (
     <>
       <CssBaseline />
-      <AppBar color="secondary" position="fixed">
-                <Toolbar>
-                    <Grid
-                        container
-                        spacing={30}
-                        alignItems="center"
-                    >
-                        <Grid item>
-                            <Grid container alignItems="center" spacing={2}>
-                                <Grid item>
-                                    <InfoIcon/>
-                                   
-                                </Grid>
-                                <Grid item>
-                                    <Typography variant="h6">
-                                        About Us
-                                    </Typography>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item>
-                            <Grid
-                                container
-                                justifyContent="space-between"
-                                spacing={15}
-                            >
-                                <Grid item>
-                                    <Link
-                                        component="button"
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                    >
-                                       <Typography variant="h6">Home</Typography>
-                                    </Link>
-                                </Grid>
-                                <Grid item>
-                                    <Link
-                                        component="button"
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                    >
-                                       <Typography variant="h6">About</Typography>
-                                        
-                                    </Link>
-                                </Grid>
-                                <Grid item>
-                                    <Link
-                                        component="button"
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                    >
-                                       <Typography variant="h6">Contact</Typography>
-                                        
-                                    </Link>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                        <Grid item>
-                            <Grid container alignItems="center">
-                                <Grid item mr={2}>
-                                    <TextField
-                                        variant="standard"
-                                        placeholder="Search"
-                                        color="secondary"
-                                    />
-                                </Grid>
-                                <Grid item>
-                                    <Button variant="inlined">
-                                        <SearchIcon />
-                                    </Button>
-                                </Grid>
-                            </Grid>
-                        </Grid>
-                    </Grid>
-                </Toolbar>
-            </AppBar>
+    
             <main>
                 <Grid>
                 <Box
@@ -171,7 +94,7 @@ const HomePage1 = () => {
                         </Typography>
                     </Container>
                     <Container>
-                        <Typography variant="subtitle2" align="left" py={2}>
+                        <Typography variant="subtitle2" align="center" py={2}>
                             If you’re looking for any IT Support or Solutions
                             let’s work together 😊
                         </Typography>
@@ -186,4 +109,4 @@ const HomePage1 = () => {
   );
 };
 
-export default HomePage1;
+export default About;
