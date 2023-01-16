@@ -5,14 +5,22 @@ import {
   CardContent,
   CardMedia,
   Grid,
+  Pagination,
   Typography,
 } from "@mui/material";
 import { Container } from "@mui/system";
+import axios from "axios";
 import React, { useEffect, useState } from "react";
-import User from "./User";
+
+
+import { CreateUser } from "./CreateUser";
+// import User from "./User";
 
 const HomePage = () => {
   const [posts, setPosts] = useState([]);
+  const[page,setPage] = useState(1)
+  const[rowPerPage,setRowPerPage] = useState(4)
+  const[post,setPost] = useState([])
   console.log(posts, "     ");
   const getPostsData = () => {
     fetch("https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/Posts")
@@ -21,12 +29,23 @@ const HomePage = () => {
         // console.log(data, "data in Api");
         setPosts(data);
       });
+  //   axios
+  //   .get('https://63b06aa0f9a53fa20268c6ed.mockapi.io/api/v1/Posts')
+  // .then(({data}) => {
+  //   setPost(data)
+  //   console.log(data)
+  // })
+
   };
   useEffect(() => {
     getPostsData();
   }, []);
+  const handleChangePage = (event,newPage) => {
+    setPage(newPage);
+  }
   return (
     <>
+
       <main>
         <Grid py={5}>
           <Container>
@@ -37,7 +56,10 @@ const HomePage = () => {
           </Container>
           <Container>
             <Grid container justifyContent="center" spacing={3}>
-              {posts?.map((post) => {
+              {posts
+               .slice(page * rowPerPage-rowPerPage, page*rowPerPage)
+
+              .map((post) => {
                 return (
                   <Grid item>
                     <Card sx={{ maxWidth: 345 }}>
@@ -67,7 +89,8 @@ const HomePage = () => {
             </Grid>
           </Container>
         </Grid>
-        <User/>
+        <Pagination count ={Math.floor(posts?.length/ rowPerPage)}
+    onChange={handleChangePage}/>
       </main>
     </>
   );

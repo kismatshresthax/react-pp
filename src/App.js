@@ -9,6 +9,7 @@ import Login from './login/Login';
 import SignUpForm from './login/SignUp';
 import PrivateRoute from './PrivateRoute';
 
+
 function App() {
 const [isRegistered, setIsRegistered] =useState(false)
   const[isLogin, setIsLogin] =useState(false)
@@ -32,8 +33,7 @@ const [isRegistered, setIsRegistered] =useState(false)
            </BrowserRouter> 
         :<Login userInput={userInput} setIsLogin={setIsLogin}/>
       :<SignUpForm userInput={userInput} setUserInput={setUserInput} setIsRegistered={setIsRegistered}/>} 
-   
- 
+
      
     </div>
   );

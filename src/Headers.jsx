@@ -4,10 +4,10 @@ import {
     Grid,
     Toolbar,
     Typography,
-    Link,
     TextField,
     Button,
   } from "@mui/material";
+  import { Link } from "react-router-dom";
   import React from "react";
   import InfoIcon from "@mui/icons-material/Info";
   import SearchIcon from "@mui/icons-material/Search";
@@ -42,38 +42,16 @@ export const Headers = () => {
                                 spacing={20}
                             >
                                 <Grid item>
-                                    <Link 
-                                        component='button'
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                    >
-<a href="/">Home</a>   
-                                 </Link>
+                                <Link to="/">Home</Link>
+
                                 </Grid>
                                 <Grid item>
-                                    <Link to="/about"
-                                        component="button"
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                        
-                                    >
-                                      <a href="/about">About</a> 
-               
-                                        
-                                    </Link>
-                                </Grid>
+                                <Link to="/about">About</Link>
+</Grid>
+                                   
                                 <Grid item>
-                                    <Link
-                                        component="button"
-                                        variant="body2"
-                                        underline="hover"
-                                        color="#fff"
-                                    >
-                                       <Typography variant="h6">Contact</Typography>
-                                        
-                                    </Link>
+                                <Link to="/contact">contact</Link>
+                                   
                                 </Grid>
                             </Grid>
                         </Grid>
